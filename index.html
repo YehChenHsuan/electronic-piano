@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電子鋼琴</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>電子鋼琴</h1>
+        <div id="piano-container">
+            <div id="piano"></div>
+        </div>
+        <div class="controls">
+            <div class="octave-control">
+                <button id="octave-down">降八度</button>
+                <span id="current-octave">當前八度: 4</span>
+                <button id="octave-up">升八度</button>
+            </div>
+            <div class="volume-control">
+                <label for="volume">音量:</label>
+                <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
