@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+#piano-container {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+#piano {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 240px;
+    margin: 0 auto;
+    white-space: nowrap;
+}
+
+.key {
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.white-key {
+    width: 60px;
+    height: 240px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 0 0 5px 5px;
+    z-index: 1;
+}
+
+.white-key.active {
+    background-color: #e6e6e6;
+}
+
+.black-key {
+    position: absolute;
+    width: 36px;
+    height: 150px;
+    background-color: #333;
+    border-radius: 0 0 5px 5px;
+    z-index: 2;
+    top: 0;
+}
+
+.black-key.active {
+    background-color: #555;
+}
+
+.key-label {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    user-select: none;
+}
+
+.white-key .key-label {
+    color: #333;
+}
+
+.black-key .key-label {
+    color: white;
+}
+
+.note-label {
+    position: absolute;
+    bottom: 35px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    user-select: none;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.octave-control, .volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#current-octave {
+    font-weight: bold;
+    min-width: 120px;
+}
+
+@media (max-width: 768px) {
+    .white-key {
+        width: 40px;
+    }
+    
+    .black-key {
+        width: 24px;
+    }
+    
+    .key-label, .note-label {
+        font-size: 10px;
+    }
+}
